@@ -8,7 +8,7 @@ from .base import Model
 
 class HumanVote(db.Model, Model["HumanVote"]):
     image_id: Mapped[int] = mapped_column(ForeignKey("image.id"), primary_key=True)
-    # image: Mapped["Image"] = relationship(back_populates="human_vote")
+    image: Mapped["Image"] = relationship(back_populates="human_vote")
 
     @classmethod
     def find_all(cls) -> list["HumanVote"]:
@@ -19,4 +19,4 @@ class HumanVote(db.Model, Model["HumanVote"]):
         return cls._query_first()
 
 
-# from .image import Image
+from .image import Image

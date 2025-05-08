@@ -3,7 +3,7 @@ from flask_classful import FlaskView
 
 from app.facade import Flash
 from app.form import HumanVoteForm
-from app.service import HumanVoteService #, ImageService
+from app.service import HumanVoteService, ImageService
 
 from .mixin import ResponseMixin
 
@@ -19,7 +19,7 @@ class HumanVoteView(FlaskView, ResponseMixin):
         ]
         is_voting = True
         if not is_voting:
-            return self._redirect_to("home:index")
+            return self._redirect_to("image:index")
         return self._render_page("human_vote/index", images=images)
 
     def post(self):
@@ -30,7 +30,7 @@ class HumanVoteView(FlaskView, ResponseMixin):
         is_voting = True
         if not is_voting:
             Flash.append("success", "Você avaliou todas as imagens")
-            return self._redirect_to("home:index")
+            return self._redirect_to("image:index")
         form = HumanVoteForm(request.form)
         HumanVoteService.create(form)
         return self._redirect_to("human_vote:index")

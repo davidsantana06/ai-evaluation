@@ -4,7 +4,7 @@ from flask import Flask, redirect
 from app.extension import db
 from app.facade import Flash, Template, Url
 from app.model import *
-from app.view import HomeView, HumanVoteView
+from app.view import HomeView, HumanVoteView, ImageView
 
 from .parameter import Parameter
 from .path import Path
@@ -28,6 +28,7 @@ class Setup:
     def register_views(app: Flask) -> None:
         HomeView.register(app)
         HumanVoteView.register(app)
+        ImageView.register(app)
 
     @staticmethod
     def _handle_error(_: Exception):

@@ -1,0 +1,13 @@
+{% macro render_th(icon, label, description = none) %}
+    <th>
+        <i class="{{ icon }} fa-fw mr-1"></i>
+        <span
+            {% if description %}
+                class="has-tooltip-arrow"
+                data-tooltip="{{ description }}"
+            {% endif %}
+        >
+            {{ label }}
+        </span>
+    </th>
+{% endmacro %}

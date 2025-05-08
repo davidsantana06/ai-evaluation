@@ -1,0 +1,98 @@
+{% from macro('table') import render_th %}
+
+{% extends layout('base') %}
+
+{% block header %} {% include partial('logo_header') %} {% endblock %}
+
+{% block main %}
+    <div class="box p-6">
+        <table class="table is-fullwidth is-hoverable">
+            <thead>
+                <tr class="is-size-7">
+                    {{ render_th(
+                        icon='fas fa-image',
+                        label='Imagem'
+                    ) }}
+                    {{ render_th(
+                        icon='fas fa-layer-group',
+                        label='Grupo'
+                    ) }}
+                    {{ render_th(
+                        icon='fas fa-robot',
+                        label='Autor',
+                        description='I.A. responsável pela criação da imagem'
+                    ) }}
+                    {{ render_th(
+                        icon='fas fa-check',
+                        label='ChatGPT',
+                        description='Avaliações feitas pelo ChatGPT'
+                    ) }}
+                    {{ render_th(
+                        icon='fas fa-check-double',
+                        label='Você',
+                        description='Avaliações feitas por você'
+                    ) }}
+                </tr>
+            </thead>
+            <tbody>
+                {% for image in images %}
+                    {% set is_even = image.group % 2 == 0 %}
+                    <tr>
+                        <td class="is-vcentered">
+                            <figure class="image is-max-width-128">
+                                <a href="{{ static('img/' ~ image.filename) }}" target="_blank">
+                                    <img
+                                        class="is-zoomable"
+                                        src="{{ static('img/' ~ image.filename) }}"
+                                    />
+                                </a>
+                            </figure>
+                        </td>
+                        <td class="is-vcentered">
+                            <span class="
+                                tag
+                                {% if is_even %} is-white {% else %} is-dark {% endif %}
+                                is-rounded
+                                has-text-weight-semibold
+                            ">
+                                {{ image.group }}
+                            </span>
+                        </td>
+                        <td class="is-vcentered">
+                            <span class="
+                                tag
+                                is-primary
+                                {% if is_even %} is-light {% endif %}
+                                is-rounded
+                                has-text-weight-semibold
+                            ">
+                                {{ image.ai }}
+                            </span>
+                        </td>
+                        {% for vote in [image.ai_vote, image.human_vote] %}
+                            <td class="is-vcentered">
+                                {% if vote %} <i class="fas fa-check"></i> {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="is-size-7 has-text-centered has-text-light px-5">
+            <p>
+                ❝ A inteligência artificial é apenas o meio. ❞
+                <br />
+                — Juliano Kimura
+            </p>
+        </div>
+    </div>
+    <div class="has-text-centered">
+        <a
+            class="button is-rounded is-link has-text-weight-bold"
+            href="{{ view('human_vote:reset', next='human_vote:index') }}"
+        >
+            <i class="fas fa-rotate-right mr-2"></i>
+            Recomeçar
+        </a>
+    </div>
+{% endblock %}
