@@ -1,0 +1,28 @@
+<div class="fixed-grid has-1-cols">
+    <div class="grid is-position-fixed is-top-0 is-right-0 is-z-index-1 m-5">
+        {% for category, message in flashes %}
+            {% set icon = {
+                'danger': 'fas fa-circle-exclamation',
+                'info': 'fas fa-circle-info',
+                'success': 'fas fa-circle-check'
+            }[category] %}
+            <div class="cell">
+                <div class="
+                    notification
+                    is-{{ category }}
+                    is-light
+                    is-max-width-384
+                    has-shadow
+                    px-4
+                    py-3
+                    animate__animated
+                    animate__faster
+                    animate__fadeInRight
+                ">
+                    <i class="{{ icon }} mr-1"></i>
+                    {{ message }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

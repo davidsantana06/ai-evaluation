@@ -1,0 +1,32 @@
+{% extends layout('base') %}
+
+{% block header %}
+    <header class="container is-max-tablet px-5 mt-6 mb-5">
+        <figure class="image">
+            <img
+                class="has-radius-large"
+                src="{{ static('img/banner.png') }}"
+            />
+        </figure>
+    </header>
+{% endblock %}
+
+{% block main %}
+    <div class="box p-6">
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+    </div>
+    <div class="has-text-centered">
+        <a
+            class="button is-rounded is-link has-text-weight-bold"
+            href="{{ view('home:index') }}"
+        >
+            <i class="fas fa-fire mr-2"></i>
+            Começar
+        </a>
+    </div>
+{% endblock %}

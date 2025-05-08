@@ -1,0 +1,66 @@
+:root {
+  --bulma-primary-h: 145deg;
+  --bulma-primary-s: 63%;
+  --bulma-primary-l: 49%;
+  --bulma-link-h: 283deg;
+  --bulma-link-s: 39%;
+  --bulma-link-l: 53%;
+  --bulma-info-h: 210deg;
+  --bulma-info-s: 57%;
+  --bulma-info-l: 78%;
+  --bulma-success-h: 144deg;
+  --bulma-success-s: 35%;
+  --bulma-success-l: 75%;
+  --bulma-warning-h: 43deg;
+  --bulma-warning-l: 82%;
+  --bulma-danger-h: 0deg;
+  --bulma-danger-s: 83%;
+  --bulma-danger-l: 81%;
+}
+
+.is-max-width-128 {
+  max-width: 128px;
+}
+
+.is-max-width-320 {
+  max-width: 320px;
+}
+
+.is-max-width-384 {
+  max-width: 384px;
+}
+
+.is-right-0 {
+  right: 0;
+}
+
+.is-vcentered {
+  vertical-align: middle;
+}
+
+.is-z-index-1 {
+  z-index: 1;
+}
+
+.is-zoomable {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.is-zoomable:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.075);
+}
+
+@media screen and (max-width: 768px) {
+  .is-flex-direction-column-mobile {
+    flex-direction: column !important;
+  }
+
+  .is-align-items-strecht-mobile {
+    align-items: stretch !important;
+  }
+}
+
+.has-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
