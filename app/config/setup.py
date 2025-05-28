@@ -4,6 +4,7 @@ from flask import Flask, redirect
 from app.extension import db
 from app.facade import Flash, Template, Url
 from app.model import *
+from app.service import ImageService, SetupService
 from app.view import HomeView, HumanVoteView, ImageView
 
 from .parameter import Parameter
@@ -31,15 +32,6 @@ class Setup:
         ImageView.register(app)
 
     @staticmethod
-    def _handle_error(_: Exception):
-        Flash.append("danger", "Ops! Algo deu errado")
-        return redirect(Url.for_view("home:index"))
-
-    @classmethod
-    def register_error_handler(cls, app: Flask) -> None:
-        app.register_error_handler(Exception, cls._handle_error)
-
-    @staticmethod
     def inject_jinja_globals(app: Flask) -> None:
         app.context_processor(
             lambda: {
@@ -51,3 +43,28 @@ class Setup:
                 "flashes": Flash.pop_all(),
             }
         )
+
+    @staticmethod
+    async def generate_images(app: Flask) -> None:
+        generation_entries = SetupService.get_generation_entries()
+
+        with app.app_context():
+            images = ImageService.get_all()
+
+            has_generated = len(images) > 0
+            if has_generated:
+                return
+
+            for entry in generation_entries:
+                ais = SetupService.randomize_ais()
+                for ai in ais:
+                    await SetupService.create_image(ai, **entry)
+
+    @staticmethod
+    def _handle_error(_: Exception):
+        Flash.append("danger", "Ops! Algo deu errado")
+        return redirect(Url.for_view("home:index"))
+
+    @classmethod
+    def register_error_handler(cls, app: Flask) -> None:
+        app.register_error_handler(Exception, cls._handle_error)

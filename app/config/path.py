@@ -19,3 +19,6 @@ class Path:
 
     DATABASE_FILE = join(ROOT_FOLDER, "db.sqlite3")
     """ /db.sqlite3 """
+
+    GENERATION_ENTRIES_FILE = join(ROOT_FOLDER, "generation_entries.json")
+    """ /generation_entries.json """

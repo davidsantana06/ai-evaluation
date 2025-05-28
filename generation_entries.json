@@ -1,0 +1,127 @@
+[
+  {
+    "group": 1,
+    "theme": "Animais: um leão na savana ao pôr do sol",
+    "prompt": "A majestic lion standing in the savanna during sunset, golden light, photorealistic style, wide angle landscape."
+  },
+  {
+    "group": 2,
+    "theme": "Cidades: Veneza com gôndolas ao entardecer",
+    "prompt": "Gondolas floating on the canals of Venice at sunset, soft warm light, photorealistic style, romantic European cityscape with water reflections."
+  },
+  {
+    "group": 3,
+    "theme": "Natureza: floresta tropical com neblina pela manhã",
+    "prompt": "A dense tropical rainforest covered in morning fog, soft diffused light, photorealistic style, wide angle nature scene with vibrant green tones."
+  },
+  {
+    "group": 4,
+    "theme": "Ficção científica: astronauta caminhando em Marte",
+    "prompt": "An astronaut walking across the Martian surface, harsh sunlight, photorealistic style, wide angle view with reddish terrain and dust clouds."
+  },
+  {
+    "group": 5,
+    "theme": "Esportes: jogador de futebol chutando a bola em um estádio lotado",
+    "prompt": "A soccer player kicking the ball in a crowded stadium, bright stadium lights, photorealistic style, dynamic motion blur, wide angle view."
+  },
+  {
+    "group": 6,
+    "theme": "Fantasia: castelo flutuando no céu com nuvens ao redor",
+    "prompt": "A floating castle in the sky surrounded by clouds, golden sunlight, fantasy art style, wide angle view with dramatic lighting."
+  },
+  {
+    "group": 7,
+    "theme": "Cotidiano: mulher lendo livro em um café aconchegante",
+    "prompt": "A woman reading a book in a cozy café, warm indoor lighting, photorealistic style, intimate composition with rustic details."
+  },
+  {
+    "group": 8,
+    "theme": "História: soldados romanos marchando pelo campo",
+    "prompt": "Roman soldiers in full armor marching across a rural landscape, overcast lighting, photorealistic style, wide angle historical scene."
+  },
+  {
+    "group": 9,
+    "theme": "Cultura: festival tradicional japonês com lanternas",
+    "prompt": "A traditional Japanese festival at night, warm lantern light, photorealistic style, wide angle view with people in yukata."
+  },
+  {
+    "group": 10,
+    "theme": "Futurismo: cidade futurista com carros voadores",
+    "prompt": "A futuristic city skyline with flying cars, neon lights, photorealistic style, wide angle night view with high-tech buildings."
+  },
+  {
+    "group": 11,
+    "theme": "Mitologia: deusa grega segurando uma tocha",
+    "prompt": "A Greek goddess holding a torch in a marble temple, warm torchlight, classical art style, dramatic composition with flowing robes."
+  },
+  {
+    "group": 12,
+    "theme": "Clima: tempestade se aproximando de uma fazenda",
+    "prompt": "A thunderstorm approaching a farm field, dramatic storm lighting, photorealistic style, wide angle view with dark clouds."
+  },
+  {
+    "group": 13,
+    "theme": "Animais: tigre descansando em uma floresta tropical",
+    "prompt": "A majestic tiger lying in a lush tropical jungle, dappled sunlight, photorealistic style, intimate wildlife composition."
+  },
+  {
+    "group": 14,
+    "theme": "Tecnologia: robô ajudando idoso em casa",
+    "prompt": "A humanoid robot assisting an elderly man in a living room, warm indoor lighting, photorealistic style, intimate domestic scene."
+  },
+  {
+    "group": 15,
+    "theme": "Saúde: médica sorrindo em um consultório moderno",
+    "prompt": "A female doctor smiling in a modern medical office, bright clinical lighting, photorealistic style, professional environment composition."
+  },
+  {
+    "group": 16,
+    "theme": "Música: banda tocando jazz em bar intimista",
+    "prompt": "A jazz band playing in an intimate bar, warm stage lighting, photorealistic style, atmospheric composition with vintage instruments."
+  },
+  {
+    "group": 17,
+    "theme": "Espaço: astronauta caminhando em Marte ao pôr do sol",
+    "prompt": "An astronaut walking on Mars at sunset, orange Martian light, photorealistic style, wide angle view of rocky terrain."
+  },
+  {
+    "group": 18,
+    "theme": "Cidades: vista noturna de Paris com a Torre Eiffel iluminada",
+    "prompt": "Nighttime view of Paris with the Eiffel Tower, city lights and spotlights, photorealistic style, wide angle urban composition."
+  },
+  {
+    "group": 19,
+    "theme": "Meio Ambiente: floresta amazônica vista de cima",
+    "prompt": "Aerial view of the Amazon rainforest, bright daylight, photorealistic style, wide angle landscape with lush green canopy."
+  },
+  {
+    "group": 20,
+    "theme": "Cultura: festa junina no interior do Brasil",
+    "prompt": "Traditional Festa Junina in rural Brazil, warm firelight, photorealistic style, wide angle view with colorful decorations."
+  },
+  {
+    "group": 21,
+    "theme": "Trabalho: designer gráfico em um estúdio criativo",
+    "prompt": "A graphic designer working in a creative studio, bright workspace lighting, photorealistic style, modern office composition."
+  },
+  {
+    "group": 22,
+    "theme": "Transporte: metrô futurista em uma cidade grande",
+    "prompt": "A futuristic metro system in a modern city, bright station lighting, photorealistic style, wide angle view with clean architecture."
+  },
+  {
+    "group": 23,
+    "theme": "Gastronomia: mesa de café da manhã brasileira",
+    "prompt": "A rustic wooden table with traditional Brazilian breakfast, soft morning light, photorealistic style, food photography composition."
+  },
+  {
+    "group": 24,
+    "theme": "História: navio português chegando ao Brasil em 1500",
+    "prompt": "Portuguese ship approaching the Brazilian coast in 1500, bright tropical sunlight, photorealistic style, wide angle historical scene."
+  },
+  {
+    "group": 25,
+    "theme": "Moda: desfile com roupas sustentáveis e ecológicas",
+    "prompt": "Fashion runway with sustainable clothing, bright runway lighting, photorealistic style, wide angle view with eco-friendly decor."
+  }
+]
