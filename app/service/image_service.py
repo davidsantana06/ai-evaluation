@@ -2,9 +2,26 @@ from app.model import Image
 
 
 class ImageService:
+    DEFAULT_WIDTH = 512
+    DEFAULT_HEIGHT = 512
+
     @staticmethod
-    def create(group: int, theme: str, ai: str, prompt: str, filename: str) -> Image:
-        image = Image(group, theme, ai, prompt, filename)
+    def create(
+        group: int,
+        theme: str,
+        ai: str,
+        prompt: str,
+        base64: str,
+        filename: str,
+    ) -> Image:
+        image = Image(
+            group=group,
+            theme=theme,
+            ai=ai,
+            prompt=prompt,
+            base64=base64,
+            filename=filename,
+        )
         Image.save(image)
         return image
 
