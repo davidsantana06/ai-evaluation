@@ -88,11 +88,12 @@
     </div>
     <div class="has-text-centered">
         <a
-            class="button is-rounded is-link has-text-weight-bold"
-            href="{{ view('human_vote:reset', next='human_vote:index') }}"
+            class="button is-rounded is-link has-text-weight-bold has-tooltip-arrow has-tooltip-bottom"
+            href="{{ view('human_vote:reset', next='home:index') }}"
+            data-tooltip="Ao clicar, seu progresso será reiniciado"
         >
-            <i class="fas fa-rotate-right mr-2"></i>
-            Recomeçar
+            <i class="fas fa-home mr-2"></i>
+            Voltar ao início
         </a>
     </div>
 {% endblock %}
