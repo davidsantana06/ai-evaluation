@@ -15,7 +15,7 @@ class Image(db.Model, Model["Image"]):
     base64 = Column(String, nullable=False)
     filename = Column(String, nullable=False)
 
-    # ai_vote: Mapped["AiVote"] = relationship(back_populates="image")
+    ai_vote: Mapped["AiVote"] = relationship(back_populates="image")
     human_vote: Mapped["HumanVote"] = relationship(back_populates="image")
 
     @classmethod
@@ -27,5 +27,5 @@ class Image(db.Model, Model["Image"]):
         return cls._query_first(filter_by=[cls.group == group])
 
 
-# from .ai_vote import AiVote
+from .ai_vote import AiVote
 from .human_vote import HumanVote

@@ -6,9 +6,9 @@ from app.extension import db
 from .base import Model
 
 
-class HumanVote(db.Model, Model["HumanVote"]):
+class AiVote(db.Model, Model["AiVote"]):
     image_id: Mapped[int] = mapped_column(ForeignKey("image.id"), primary_key=True)
-    image: Mapped["Image"] = relationship(back_populates="human_vote")
+    image: Mapped["Image"] = relationship(back_populates="ai_vote")
 
     @classmethod
     def find_all(cls):
