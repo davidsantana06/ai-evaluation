@@ -4,7 +4,7 @@ from flask import Flask, redirect
 from app.extension import db
 from app.facade import Flash, Template, Url
 from app.model import *
-from app.service import ImageService, SetupService
+from app.service import AiVoteService, ImageService, OpenAiService, SetupService
 from app.view import HomeView, HumanVoteView, ImageView
 
 from .parameter import Parameter
@@ -59,6 +59,22 @@ class Setup:
                 ais = SetupService.randomize_ais()
                 for ai in ais:
                     await SetupService.create_image(ai, **entry)
+
+    @staticmethod
+    def evaluate_images(app: Flask) -> None:
+        generation_entries = SetupService.get_generation_entries()
+        with app.app_context():
+            vote = AiVoteService.get_first()
+
+            has_voted = vote is not None
+            if has_voted:
+                return
+
+            for entry in generation_entries:
+                group = entry["group"]
+                images = ImageService.get_all_by_group(group)
+                voted_id = OpenAiService.evaluate_images(images)
+                AiVoteService.create(voted_id)
 
     @staticmethod
     def _handle_error(_: Exception):
