@@ -1,18 +1,21 @@
-from os import path
+from os.path import abspath, dirname, join
 
 
 class Path:
-    ROOT_FOLDER = path.abspath(path.dirname(f"{__file__}/../../../.."))
+    ROOT_FOLDER = abspath(dirname(f"{__file__}/../../../.."))
     """ / """
 
-    ENV_FILE = path.join(ROOT_FOLDER, ".env")
+    ENV_FILE = join(ROOT_FOLDER, ".env")
     """ /.env """
 
-    STATIC_FOLDER = path.join(ROOT_FOLDER, "static")
+    STATIC_FOLDER = join(ROOT_FOLDER, "static")
     """ /static """
 
-    TEMPLATE_FOLDER = path.join(ROOT_FOLDER, "template")
+    IMAGE_FOLDER = join(STATIC_FOLDER, "img")
+    """ /static/img """
+
+    TEMPLATE_FOLDER = join(ROOT_FOLDER, "template")
     """ /template """
 
-    DATABASE_FILE = path.join(ROOT_FOLDER, "db.sqlite3")
+    DATABASE_FILE = join(ROOT_FOLDER, "db.sqlite3")
     """ /db.sqlite3 """

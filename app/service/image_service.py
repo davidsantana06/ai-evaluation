@@ -1,3 +1,7 @@
+from os.path import join
+from uuid import uuid4
+
+from app.config import Path
 from app.model import Image
 
 
@@ -30,5 +34,25 @@ class ImageService:
         return Image.find_all()
 
     @staticmethod
+    def get_all_by_group(group: int) -> list[Image]:
+        return Image.find_all_by_group(group)
+
+    @staticmethod
     def get_one_by_group(group: int) -> Image | None:
         return Image.find_first_by_group(group)
+
+    @staticmethod
+    def get_one_by_id(id: int) -> Image | None:
+        return Image.find_first_by_id(id)
+
+    @staticmethod
+    def __generate_filename() -> str:
+        return f"{uuid4()}.png"
+
+    @classmethod
+    def save_as_png(cls, binary: bytes) -> str:
+        filename = cls.__generate_filename()
+        filepath = join(Path.IMAGE_FOLDER, filename)
+        with open(filepath, "wb") as file:
+            file.write(binary)
+        return filename

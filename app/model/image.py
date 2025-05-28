@@ -23,6 +23,14 @@ class Image(db.Model, Model["Image"]):
         return cls._query_all(order_by=[cls.group, cls.ai])
 
     @classmethod
+    def find_all_by_group(cls, group: int):
+        return cls._query_all(filter_by=[cls.group == group], order_by=[cls.id])
+
+    @classmethod
+    def find_first_by_id(cls, id: int):
+        return cls._query_first(filter_by=[cls.id == id])
+
+    @classmethod
     def find_first_by_group(cls, group: int):
         return cls._query_first(filter_by=[cls.group == group])
 
