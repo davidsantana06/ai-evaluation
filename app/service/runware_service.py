@@ -8,7 +8,7 @@ from .base import ExternalAiService
 
 
 class RunwareService(ExternalAiService):
-    _client = Runware(api_key=Parameter.RUNWARE_AI_KEY)
+    _client = Runware(api_key=Parameter.RUNWARE_KEY)
     __is_connected = False
 
     @classmethod

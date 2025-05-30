@@ -15,6 +15,6 @@ class Parameter:
 
     OPEN_AI_KEY = environ.get("OPEN_AI_KEY")
 
-    RUNWARE_AI_KEY = environ.get("RUNWARE_AI_KEY")
+    RUNWARE_KEY = environ.get("RUNWARE_KEY")
 
     STABILITY_AI_KEY = environ.get("STABILITY_AI_KEY")
