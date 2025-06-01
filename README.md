@@ -1,5 +1,5 @@
 <img
-  src="./static/img/banner.png"
+  src="./static/img/_banner.png"
   alt="AI Evaluation"
   style="width: 100%"
 />
