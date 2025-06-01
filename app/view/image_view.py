@@ -6,7 +6,7 @@ from .mixin import ResponseMixin
 class ImageView(FlaskView, ResponseMixin):
     def index(self):
         ai_votes = AiVoteService.get_all()
-        human_votes = HumanVoteService.get_all()
+        human_votes, _ = HumanVoteService.get_all()
 
         has_voted_all = len(ai_votes) == len(human_votes)
         if not has_voted_all:

@@ -23,6 +23,11 @@
                         description='I.A. responsável pela criação da imagem'
                     ) }}
                     {{ render_th(
+                        icon='fas fa-clock',
+                        label='Tempo de Geração',
+                        description='Tempo gasto para a criação da imagem'
+                    )}}
+                    {{ render_th(
                         icon='fas fa-check',
                         label='ChatGPT',
                         description='Avaliações feitas pelo ChatGPT'
@@ -39,12 +44,12 @@
                     {% set is_even = image.group % 2 == 0 %}
                     <tr>
                         <td class="is-vcentered">
-                            <figure class="image is-max-width-128">
+                            <figure
+                                class="image is-max-width-128 has-tooltip-arrow has-tooltip-left"
+                                data-tooltip="{{ image.theme }}"
+                            >
                                 <a href="{{ static('img/' ~ image.filename) }}" target="_blank">
-                                    <img
-                                        class="is-zoomable"
-                                        src="{{ static('img/' ~ image.filename) }}"
-                                    />
+                                    <img class="is-zoomable" src="{{ static('img/' ~ image.filename) }}"/>
                                 </a>
                             </figure>
                         </td>
@@ -68,6 +73,9 @@
                             ">
                                 {{ image.ai }}
                             </span>
+                        </td>
+                        <td class="is-vcentered">
+                            {{ image.cleaned_time_taken }}
                         </td>
                         {% for vote in [image.ai_vote, image.human_vote] %}
                             <td class="is-vcentered">

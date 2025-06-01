@@ -35,6 +35,12 @@ class Image(db.Model, Model["Image"]):
     def find_first_by_group(cls, group: int):
         return cls._query_first(filter_by=[cls.group == group])
 
+    @property
+    def cleaned_time_taken(self) -> str:
+        time_taken = str(self.time_taken)
+        hms, ms = time_taken.split(".")
+        return f"{hms}.{ms[:2]}"
+
 
 from .ai_vote import AiVote
 from .human_vote import HumanVote
