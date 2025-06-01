@@ -12,7 +12,7 @@ class GeminiAiService(ExternalAiService):
     __config = GenerateContentConfig(response_modalities=["TEXT", "IMAGE"])
 
     @classmethod
-    async def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
+    def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
         def submit_prompt():
             return cls.__client.models.generate_content(
                 model="gemini-2.0-flash-preview-image-generation",
@@ -26,5 +26,5 @@ class GeminiAiService(ExternalAiService):
             return image_part.inline_data.data
 
         generation = submit_prompt()
-        data = extract(generation)
-        return cls._decode(data)
+        content = extract(generation)
+        return cls._decode(content)

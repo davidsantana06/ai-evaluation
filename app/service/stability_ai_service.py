@@ -1,4 +1,5 @@
 from io import BytesIO
+from requests import post
 from requests import Response
 
 from app.config import Parameter
@@ -13,17 +14,18 @@ class StabilityAiService(ExternalAiService):
     }
 
     @classmethod
-    async def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
+    def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
         def submit_prompt():
-            return cls._post(
+            return post(
                 cls.__API_URL,
-                cls.__HEADERS,
-                {"prompt": f"{prompt} with {width}x{height} pixels resolution"},
+                headers=cls.__HEADERS,
+                data={"prompt": f"{prompt} with {width}x{height} pixels resolution"},
+                files={"none": ""},
             )
 
         def extract(generation: Response):
             return generation.content
 
         generation = submit_prompt()
-        data = extract(generation)
-        return cls._decode(data)
+        content = extract(generation)
+        return cls._decode(content)

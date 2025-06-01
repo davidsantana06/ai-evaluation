@@ -1,6 +1,6 @@
 from io import BytesIO
-from runware import Runware, IImageInference
-from runware.types import IImage
+from requests import Response, post
+from uuid import uuid4
 
 from app.config import Parameter
 
@@ -8,32 +8,36 @@ from .base import ExternalAiService
 
 
 class RunwareService(ExternalAiService):
-    __client = Runware(api_key=Parameter.RUNWARE_KEY)
+    __API_URL = "https://api.runware.ai/v1"
+    __HEADERS = {
+        "Authorization": f"Bearer {Parameter.RUNWARE_KEY}",
+        "Content-Type": "application/json",
+    }
 
     @classmethod
-    async def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
-        async def connect_once():
-            is_connected = cls.__client.connected()
-            if is_connected:
-                return
-
-            await cls.__client.connect()
-            cls.__is_connected = True
-
-        async def submit_prompt():
-            request = IImageInference(
-                positivePrompt=prompt,
-                model="civitai:101055@128078",
-                numberResults=1,
-                width=width,
-                height=height,
+    def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
+        def submit_prompt():
+            return post(
+                cls.__API_URL,
+                headers=cls.__HEADERS,
+                json=[
+                    {
+                        "taskType": "imageInference",
+                        "taskUUID": str(uuid4()),
+                        "positivePrompt": prompt,
+                        "width": width,
+                        "height": height,
+                        "model": "civitai:102438@133677",
+                        "numberResults": 1,
+                    }
+                ],
             )
-            return await cls.__client.imageInference(request)
 
-        def extract(generation: list[IImage]):
-            return generation[0].imageURL
+        def extract(generation: Response):
+            data = generation.json()
+            print(data)
+            return data["data"][0]["imageURL"]
 
-        await connect_once()
-        generation = await submit_prompt()
+        generation = submit_prompt()
         url = extract(generation)
         return cls._download(url)
