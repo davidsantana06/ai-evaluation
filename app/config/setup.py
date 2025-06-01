@@ -45,20 +45,20 @@ class Setup:
         )
 
     @staticmethod
-    async def generate_images(app: Flask) -> None:
+    def generate_images(app: Flask) -> None:
         generation_entries = SetupService.get_generation_entries()
 
         with app.app_context():
             images = ImageService.get_all()
 
-            has_generated = len(images) > 0
-            if has_generated:
+            has_generated_one = len(images) > 0
+            if has_generated_one:
                 return
 
             for entry in generation_entries:
                 ais = SetupService.randomize_ais()
                 for ai in ais:
-                    await SetupService.create_image(ai, **entry)
+                    SetupService.create_image(ai, **entry)
 
     @staticmethod
     def evaluate_images(app: Flask) -> None:
@@ -66,8 +66,8 @@ class Setup:
         with app.app_context():
             vote = AiVoteService.get_first()
 
-            has_voted = vote is not None
-            if has_voted:
+            has_generated_one = vote is not None
+            if has_generated_one:
                 return
 
             for entry in generation_entries:

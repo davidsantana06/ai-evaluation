@@ -7,8 +7,8 @@ from app.model import Image
 
 
 class ImageService:
-    DEFAULT_WIDTH = 512
-    DEFAULT_HEIGHT = 512
+    DEFAULT_WIDTH = 1024
+    DEFAULT_HEIGHT = 1024
 
     @staticmethod
     def create(

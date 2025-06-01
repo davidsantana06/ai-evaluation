@@ -35,7 +35,6 @@ class RunwareService(ExternalAiService):
 
         def extract(generation: Response):
             data = generation.json()
-            print(data)
             return data["data"][0]["imageURL"]
 
         generation = submit_prompt()
