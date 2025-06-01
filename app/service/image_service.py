@@ -1,3 +1,4 @@
+from datetime import timedelta
 from os.path import join
 from uuid import uuid4
 
@@ -17,6 +18,7 @@ class ImageService:
         prompt: str,
         base64: str,
         filename: str,
+        time_taken: timedelta,
     ) -> Image:
         image = Image(
             group=group,
@@ -25,6 +27,7 @@ class ImageService:
             prompt=prompt,
             base64=base64,
             filename=filename,
+            time_taken=time_taken,
         )
         Image.save(image)
         return image

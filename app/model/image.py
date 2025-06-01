@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, Interval, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.extension import db
@@ -12,8 +12,9 @@ class Image(db.Model, Model["Image"]):
     theme = Column(String, nullable=False)
     ai = Column(String, nullable=False)
     prompt = Column(String, nullable=False)
-    base64 = Column(String, nullable=False)
-    filename = Column(String, nullable=False)
+    base64 = Column(String, nullable=False, unique=True)
+    filename = Column(String, nullable=False, unique=True)
+    time_taken = Column(Interval, nullable=False)
 
     ai_vote: Mapped["AiVote"] = relationship(back_populates="image")
     human_vote: Mapped["HumanVote"] = relationship(back_populates="image")
