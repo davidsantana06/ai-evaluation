@@ -5,7 +5,7 @@ from app.extension import db
 from app.facade import Flash, Template, Url
 from app.model import *
 from app.service import AiVoteService, ImageService, OpenAiService, SetupService
-from app.view import HomeView, HumanVoteView, ImageView
+from app.view import HomeView, HumanVoteView, ImageView, StatsView
 
 from .parameter import Parameter
 from .path import Path
@@ -16,6 +16,7 @@ class Setup:
     def apply_parameters(app: Flask) -> None:
         load_dotenv(Path.ENV_FILE)
         app.config.from_object(Parameter)
+        app.json.sort_keys = Parameter.JSON_SORT_KEYS
         app.static_folder = Path.STATIC_FOLDER
         app.template_folder = Path.TEMPLATE_FOLDER
 
@@ -30,6 +31,7 @@ class Setup:
         HomeView.register(app)
         HumanVoteView.register(app)
         ImageView.register(app)
+        StatsView.register(app)
 
     @staticmethod
     def inject_jinja_globals(app: Flask) -> None:

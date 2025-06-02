@@ -7,7 +7,7 @@ import json
 
 from app.config import Path
 from app.model import Image
-from app.type import GenerationEntry
+from app.typing import GenerationEntry
 
 from .gemini_ai_service import GeminiAiService
 from .image_service import ImageService

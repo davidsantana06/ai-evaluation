@@ -11,6 +11,8 @@ class Parameter:
 
     WTF_CSRF_ENABLED = False
 
+    JSON_SORT_KEYS = False
+
     GEMINI_AI_KEY = environ.get("GEMINI_AI_KEY")
 
     OPEN_AI_KEY = environ.get("OPEN_AI_KEY")

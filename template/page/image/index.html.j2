@@ -20,12 +20,12 @@
                     {{ render_th(
                         icon='fas fa-robot',
                         label='Autor',
-                        description='I.A. responsável pela criação da imagem'
+                        description='I.A. responsável pela geração da imagem'
                     ) }}
                     {{ render_th(
                         icon='fas fa-clock',
                         label='Tempo de Geração',
-                        description='Tempo gasto para a criação da imagem'
+                        description='Tempo gasto para a geração da imagem'
                     )}}
                     {{ render_th(
                         icon='fas fa-check',
@@ -45,7 +45,7 @@
                     <tr>
                         <td class="is-vcentered">
                             <figure
-                                class="image is-max-width-128 has-tooltip-arrow has-tooltip-left"
+                                class="image is-max-width-128 has-tooltip-arrow has-tooltip-top"
                                 data-tooltip="{{ image.theme }}"
                             >
                                 <a href="{{ static('img/' ~ image.filename) }}" target="_blank">
@@ -96,12 +96,20 @@
     </div>
     <div class="has-text-centered">
         <a
-            class="button is-rounded is-link has-text-weight-bold has-tooltip-arrow has-tooltip-bottom"
+            class="button is-rounded is-link has-text-weight-bold has-tooltip-arrow has-tooltip-bottom mr-2"
             href="{{ view('human_vote:reset', next='home:index') }}"
             data-tooltip="Ao clicar, seu progresso será reiniciado"
         >
             <i class="fas fa-home mr-2"></i>
             Voltar ao início
+        </a>
+        <a
+            href="{{ view('stats:index') }}"
+            class="button is-rounded is-primary has-text-weight-bold"
+            target="_blank"
+        >
+            <i class="fas fa-glasses mr-2"></i>
+            Conferir estatísticas
         </a>
     </div>
 {% endblock %}
