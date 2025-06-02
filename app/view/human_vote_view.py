@@ -20,6 +20,9 @@ class HumanVoteView(FlaskView, ResponseMixin):
         return self._render_page("human_vote/index", images=images)
 
     def post(self):
+        form = HumanVoteForm(request.form)
+        HumanVoteService.create(form)
+
         _, current_group = HumanVoteService.get_all()
         image = ImageService.get_one_by_group(current_group)
 
@@ -27,9 +30,7 @@ class HumanVoteView(FlaskView, ResponseMixin):
         if not is_voting:
             Flash.append("success", "Você avaliou todas as imagens")
             return self._redirect_to("image:index")
-
-        form = HumanVoteForm(request.form)
-        HumanVoteService.create(form)
+    
         return self._redirect_to("human_vote:index")
 
     def reset(self):
