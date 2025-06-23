@@ -65,6 +65,7 @@ class Setup:
     @staticmethod
     def evaluate_images(app: Flask) -> None:
         generation_entries = SetupService.get_generation_entries()
+
         with app.app_context():
             vote = AiVoteService.get_first()
 
@@ -79,10 +80,10 @@ class Setup:
                 AiVoteService.create(voted_id)
 
     @staticmethod
-    def _handle_error(_: Exception):
+    def __handle_error(_: Exception):
         Flash.append("danger", "Ops! Algo deu errado")
         return redirect(Url.for_view("home:index"))
 
     @classmethod
     def register_error_handler(cls, app: Flask) -> None:
-        app.register_error_handler(Exception, cls._handle_error)
+        app.register_error_handler(Exception, cls.__handle_error)

@@ -1,6 +1,5 @@
 from io import BytesIO
-from requests import post
-from requests import Response
+from requests import Response, post
 
 from app.config import Parameter
 from .base import ExternalAiService

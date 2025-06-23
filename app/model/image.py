@@ -41,6 +41,22 @@ class Image(db.Model, Model["Image"]):
         hms, ms = time_taken.split(".")
         return f"{hms}.{ms[:2]}"
 
+    @property
+    def size_in_bytes(self) -> int:
+        padding = self.base64.count("=")
+        length = len(self.base64)
+        binary_estimate = length // 3
+        raw_bytes = binary_estimate * 4
+        return raw_bytes - padding
+
+    @property
+    def size_in_kilobytes(self) -> float:
+        return self.size_in_bytes / 1024
+
+    @property
+    def size_in_megabytes(self) -> float:
+        return self.size_in_kilobytes / 1024
+
 
 from .ai_vote import AiVote
 from .human_vote import HumanVote

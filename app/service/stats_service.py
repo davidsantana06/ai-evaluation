@@ -32,6 +32,10 @@ class StatsService:
         total_time_taken[image.ai] += total_seconds
 
     @staticmethod
+    def __add_total_size(image: Image, total_size: dict[str, int]) -> None:
+        total_size[image.ai] += image.size_in_megabytes
+
+    @staticmethod
     def __calculate_average_time_taken(
         total_time_taken: dict[str, float],
         generated_images: dict[str, int],
@@ -39,6 +43,13 @@ class StatsService:
         return {
             ai: total_time_taken[ai] / generated_images[ai] for ai in total_time_taken
         }
+
+    @staticmethod
+    def __calculate_average_size(
+        total_size: dict[str, float],
+        generated_images: dict[str, int],
+    ) -> dict[str, float]:
+        return {ai: total_size[ai] / generated_images[ai] for ai in total_size}
 
     @staticmethod
     def __round_values(data: dict[str, float]) -> dict[str, float]:
@@ -50,6 +61,7 @@ class StatsService:
         ai_votes = defaultdict(int)
         human_votes = defaultdict(int)
         total_time_taken = defaultdict(float)
+        total_size = defaultdict(float)
 
         images = ImageService.get_all()
 
@@ -57,8 +69,10 @@ class StatsService:
             cls.__add_image_generated(image, generated_images)
             cls.__add_ai_vote(image, ai_votes)
             cls.__add_human_vote(image, human_votes)
+            cls.__add_total_size(image, total_size)
             cls.__add_time_taken(image, total_time_taken)
 
+        average_size = cls.__calculate_average_size(total_size, generated_images)
         average_time_taken = cls.__calculate_average_time_taken(
             total_time_taken,
             generated_images,
@@ -82,6 +96,14 @@ class StatsService:
                     + "IA sem voto NÃO é contabilizada"
                 ),
                 "data": human_votes,
+            },
+            "total_size": {
+                "description": "Tamanho total das imagens geradas, em megabytes",
+                "data": cls.__round_values(total_size),
+            },
+            "average_size": {
+                "description": "Tamanho médio das imagens geradas, em megabytes",
+                "data": cls.__round_values(average_size),
             },
             "total_time_taken": {
                 "description": "Tempo total para a geração das imagens, em segundos",
