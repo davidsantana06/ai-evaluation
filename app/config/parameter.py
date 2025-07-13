@@ -13,9 +13,9 @@ class Parameter:
 
     JSON_SORT_KEYS = False
 
-    GEMINI_AI_KEY = environ.get("GEMINI_AI_KEY")
+    GEMINI_KEY = environ.get("GEMINI_KEY")
 
-    OPEN_AI_KEY = environ.get("OPEN_AI_KEY")
+    OPENAI_KEY = environ.get("OPENAI_KEY")
 
     RUNWARE_KEY = environ.get("RUNWARE_KEY")
 

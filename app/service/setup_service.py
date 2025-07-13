@@ -8,7 +8,7 @@ from app.config import Path
 from app.model import Image
 from app.typing import Ai, GenerationEntry
 
-from .gemini_ai_service import GeminiAiService
+from .gemini_service import GeminiService
 from .image_service import ImageService
 from .open_ai_service import OpenAiService
 from .runware_service import RunwareService
@@ -31,7 +31,7 @@ class SetupService:
     @classmethod
     def __generate_image(cls, ai: Ai, prompt: str) -> BytesIO:
         service = {
-            Ai.GEMINI: GeminiAiService,
+            Ai.GEMINI: GeminiService,
             Ai.OPENAI: OpenAiService,
             Ai.RUNWARE: RunwareService,
             Ai.STABILITY_AI: StabilityAiService,

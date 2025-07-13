@@ -7,8 +7,8 @@ from app.config import Parameter
 from .base import ExternalAiService
 
 
-class GeminiAiService(ExternalAiService):
-    __client = Client(api_key=Parameter.GEMINI_AI_KEY)
+class GeminiService(ExternalAiService):
+    __client = Client(api_key=Parameter.GEMINI_KEY)
     __config = GenerateContentConfig(response_modalities=["TEXT", "IMAGE"])
 
     @classmethod
