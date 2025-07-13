@@ -42,7 +42,7 @@ A aplicação foi desenvolvida em **Python 3.10**, recomendando-se o uso dessa v
 
 ### 1️⃣ Configurar as Variáveis de Ambiente
 
-Antes de instalar e executar a aplicação, é necessário configurar as chaves de acesso aos serviços de IA como variáveis de ambiente. Para isso, crie um arquivo `.env`, com base no `.env.example`, e atribua os valores de `GEMINI_AI_KEY`, `OPEN_AI_KEY`, `RUNWARE_KEY` e `STABILITY_AI_KEY`.
+Antes de instalar e executar a aplicação, é necessário configurar as chaves de acesso aos serviços de IA como variáveis de ambiente. Para isso, crie um arquivo `.env`, com base no `.env.example`, e atribua os valores de `GEMINI_KEY`, `OPENAI_KEY`, `RUNWARE_KEY` e `STABILITY_AI_KEY`.
 
 ### 2️⃣ Instalar as Dependências
 

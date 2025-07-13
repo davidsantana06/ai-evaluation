@@ -11,7 +11,7 @@ from .base import ExternalAiService
 
 
 class OpenAiService(ExternalAiService):
-    __client = OpenAI(api_key=Parameter.OPEN_AI_KEY)
+    __client = OpenAI(api_key=Parameter.OPENAI_KEY)
 
     @classmethod
     def generate_image(cls, prompt: str, width: int, height: int) -> BytesIO:
