@@ -4,7 +4,7 @@
   style="width: 100%"
 />
 
-**AI Evaluation** é uma aplicação dedicada à análise comparativa de imagens geradas por diferentes IAs. Para isso, quatro modelos distintos foram selecionados: Dall-E, Google Gemini, Runware e Stability AI. Cada um deles cria imagens a partir do mesmo prompt, e cabe a você avaliar qual foi o melhor, por meio do seu voto.
+**AI Evaluation** é uma aplicação dedicada à análise comparativa de imagens geradas por diferentes IAs. Para isso, quatro modelos distintos foram selecionados. Cada um deles cria imagens a partir do mesmo prompt, e cabe a você avaliar qual foi o melhor, por meio do seu voto.
 
 Após a avaliação, os resultados ficam disponíveis para visualização, mostrando quais serviços tiveram o melhor desempenho. Além disso, você pode comparar sua avaliação com a do próprio ChatGPT, que também analisa as imagens geradas.
 
@@ -25,14 +25,14 @@ Após a avaliação, os resultados ficam disponíveis para visualização, mostr
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-%23FFFFFF.svg?style=for-the-badge&logo=fontawesome&logoColor=528DD7)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
-## 💡 IAs Selecionadas
+## 💡 Modelos de IA Selecionados
 
-| IA            | Modelo                                      | Documentação                                                             |
-| ------------- | ------------------------------------------- | ------------------------------------------------------------------------ |
-| DALL·E        | `dall-e-3`                                  | [🔗 Acessar...](https://platform.openai.com/docs/overview)               |
-| Google Gemini | `gemini-2.0-flash-preview-image-generation` | [🔗 Acessar...](https://ai.google.dev/gemini-api/docs)                   |
-| Runware       | `civitai`                                   | [🔗 Acessar...](https://runware.ai/docs/en/getting-started/introduction) |
-| Stability AI  | `stable-image-core`                         | [🔗 Acessar...](https://platform.stability.ai/docs/getting-started)      |
+| Plataforma   | Modelo(s)                                   | Documentação                                                                                               |
+| ------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| OpenAI       | `dall-e-3` e `gpt-4.1`                      | [platform.openai.com/docs/overview](https://platform.openai.com/docs/overview)                             |
+| Google AI    | `gemini-2.0-flash-preview-image-generation` | [ai.google.dev/gemini-api/docs](https://ai.google.dev/gemini-api/docs)                                     |
+| Runware      | `civitai`                                   | [runware.ai/docs/en/getting-started/introduction](https://runware.ai/docs/en/getting-started/introduction) |
+| Stability AI | `stable-image-core`                         | [platform.stability.ai/docs/getting-started](https://platform.stability.ai/docs/getting-started)           |
 
 <sub>Os modelos e suas documentações podem ser atualizados após a construção do projeto. As informações apresentadas são referentes ao período de junho de 2025.</sub>
 
