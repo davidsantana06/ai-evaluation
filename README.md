@@ -38,7 +38,7 @@ Após a avaliação, os resultados ficam disponíveis para visualização, mostr
 
 ## 🛠️ Instalação e Execução
 
-A aplicação foi desenvolvida em **Python 3.12**, recomendando-se o uso dessa versão para garantir compatibilidade. Para configurar a aplicação, siga estas instruções a partir do diretório raiz do projeto.
+A aplicação foi desenvolvida em **Python 3.10**, recomendando-se o uso dessa versão para garantir compatibilidade. Para configurá-la, siga estas instruções a partir do diretório raiz do projeto.
 
 ### 1️⃣ Configurar as Variáveis de Ambiente
 
