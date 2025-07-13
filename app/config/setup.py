@@ -60,7 +60,7 @@ class Setup:
             for entry in generation_entries:
                 ais = SetupService.randomize_ais()
                 for ai in ais:
-                    SetupService.create_image(ai, **entry)
+                    SetupService.create_image(ai.value, **entry)
 
     @staticmethod
     def evaluate_images(app: Flask) -> None:

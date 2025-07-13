@@ -1,13 +1,12 @@
 from base64 import b64encode
 from datetime import datetime
 from io import BytesIO
-from typing import Literal
 from random import sample
 import json
 
 from app.config import Path
 from app.model import Image
-from app.typing import GenerationEntry
+from app.typing import Ai, GenerationEntry
 
 from .gemini_ai_service import GeminiAiService
 from .image_service import ImageService
@@ -23,23 +22,19 @@ class SetupService:
             return json.load(file)
 
     @staticmethod
-    def randomize_ais() -> list[str]:
+    def randomize_ais() -> list[Ai]:
         return sample(
-            ["Gemini AI", "Open AI", "Runware", "Stability AI"],
+            [Ai.GEMINI, Ai.OPENAI, Ai.RUNWARE, Ai.STABILITY_AI],
             k=4,
         )
 
     @classmethod
-    def __generate_image(
-        cls,
-        ai: Literal["Gemini AI", "Open AI", "Runware", "Stability AI"],
-        prompt: str,
-    ) -> BytesIO:
+    def __generate_image(cls, ai: Ai, prompt: str) -> BytesIO:
         service = {
-            "Gemini AI": GeminiAiService,
-            "Open AI": OpenAiService,
-            "Runware": RunwareService,
-            "Stability AI": StabilityAiService,
+            Ai.GEMINI: GeminiAiService,
+            Ai.OPENAI: OpenAiService,
+            Ai.RUNWARE: RunwareService,
+            Ai.STABILITY_AI: StabilityAiService,
         }
         buffer = service[ai].generate_image(
             prompt,

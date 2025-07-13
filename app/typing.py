@@ -1,4 +1,12 @@
+from enum import Enum
 from typing import TypedDict
+
+
+class Ai(Enum):
+    GEMINI = "Gemini"
+    OPENAI = "OpenAI"
+    RUNWARE = "Runware (Civitai)"
+    STABILITY_AI = "Stability AI"
 
 
 class GenerationEntry(TypedDict):
