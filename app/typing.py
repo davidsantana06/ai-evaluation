@@ -15,9 +15,12 @@ class GenerationEntry(TypedDict):
     prompt: str
 
 
+StatsData = dict[str, int | float]
+
+
 class _StatsEntry(TypedDict):
     description: str
-    data: dict[str, int | float]
+    data: StatsData
 
 
 class StatsSummary(TypedDict):
