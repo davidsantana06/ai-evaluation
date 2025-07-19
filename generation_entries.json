@@ -103,25 +103,5 @@
     "group": 21,
     "theme": "Trabalho: designer gráfico em um estúdio criativo",
     "prompt": "A graphic designer working in a creative studio, bright workspace lighting, photorealistic style, modern office composition."
-  },
-  {
-    "group": 22,
-    "theme": "Transporte: metrô futurista em uma cidade grande",
-    "prompt": "A futuristic metro system in a modern city, bright station lighting, photorealistic style, wide angle view with clean architecture."
-  },
-  {
-    "group": 23,
-    "theme": "Gastronomia: mesa de café da manhã brasileira",
-    "prompt": "A rustic wooden table with traditional Brazilian breakfast, soft morning light, photorealistic style, food photography composition."
-  },
-  {
-    "group": 24,
-    "theme": "História: navio português chegando ao Brasil em 1500",
-    "prompt": "Portuguese ship approaching the Brazilian coast in 1500, bright tropical sunlight, photorealistic style, wide angle historical scene."
-  },
-  {
-    "group": 25,
-    "theme": "Moda: desfile com roupas sustentáveis e ecológicas",
-    "prompt": "Fashion runway with sustainable clothing, bright runway lighting, photorealistic style, wide angle view with eco-friendly decor."
   }
 ]
