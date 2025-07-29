@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 from flask import Flask, redirect
 
 from app.extension import db
@@ -14,7 +13,6 @@ from .path import Path
 class Setup:
     @staticmethod
     def apply_parameters(app: Flask) -> None:
-        load_dotenv(Path.ENV_FILE, override=True)
         app.config.from_object(Parameter)
         app.json.sort_keys = Parameter.JSON_SORT_KEYS
         app.static_folder = Path.STATIC_FOLDER
