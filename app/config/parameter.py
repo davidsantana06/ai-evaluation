@@ -1,5 +1,11 @@
+from dotenv import load_dotenv
 from os import environ
+
 from .path import Path
+
+
+load_dotenv(Path.ENV_FILE)
+# Temporary (or permanent) solution to load environment variables before importing Parameter class
 
 
 class Parameter:
