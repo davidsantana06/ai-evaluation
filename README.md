@@ -10,6 +10,12 @@ Quer ver como a aplicação funciona na prática, com direito às avaliações h
   style="width: 100%"
 />
 
+<img
+  src="./static/img/_usage.gif"
+  alt="AI Evaluation — Uso"
+  style="width: 100%"
+/>
+
 **AI Evaluation** é uma aplicação dedicada à análise comparativa de imagens geradas por diferentes IAs. Para isso, quatro modelos distintos foram selecionados. Cada um deles cria imagens a partir do mesmo prompt, e cabe a você avaliar qual foi o melhor, por meio do seu voto.
 
 Após a avaliação, os resultados ficam disponíveis para visualização, mostrando quais serviços tiveram o melhor desempenho. Além disso, você pode comparar sua avaliação com a do próprio ChatGPT, que também analisa as imagens geradas.
@@ -20,13 +26,8 @@ Após a avaliação, os resultados ficam disponíveis para visualização, mostr
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css&logoColor=white)
 ![Bulma](https://img.shields.io/badge/bulma-00D0B1?style=for-the-badge&logo=bulma&logoColor=white)
-
-![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/google%20gemini-8E75B2?style=for-the-badge&logo=google%20gemini&logoColor=white)
-![Runware (Civitai)](<https://img.shields.io/badge/Runware%20(Civitai)-0c4ede?style=for-the-badge>)
-![Stability AI](https://img.shields.io/badge/Stability%20AI-7000E0?style=for-the-badge)
 
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-%23FFFFFF.svg?style=for-the-badge&logo=fontawesome&logoColor=528DD7)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
