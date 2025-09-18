@@ -1,6 +1,6 @@
-Esta branch contém imagens geradas a partir do arquivo `generations_entries.json`, além das avaliações do ChatGPT. Por conta disso, o banco de dados (`db.sqlite3`), assim como o diretório de imagens (`static/img/`), estão bastante pesados.
+Esta branch inclui imagens geradas a partir do arquivo `generations_entries.json`, bem como as avaliações realizadas pelo ChatGPT. Em razão disso, o banco de dados (`db.sqlite3`) e o diretório de imagens (`static/img/`) apresentam um tamanho considerável.
 
-Quer ver como a aplicação funciona na prática, com direito às avaliações humanas? [**CLIQUE AQUI**](https://drive.google.com/file/d/1PcDaJ8jvf-_pdguCjlOstNzZSHT-8KC3/view) para assistir ao vídeo.
+[**CLIQUE AQUI**](https://drive.google.com/file/d/1PcDaJ8jvf-_pdguCjlOstNzZSHT-8KC3/view) para ver a aplicação em funcionamento, incluindo as avaliações humanas.
 
 <hr>
 
