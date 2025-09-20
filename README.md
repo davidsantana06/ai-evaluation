@@ -97,8 +97,6 @@ Gostou do projeto e gostaria de apoiar financeiramente? Você pode contribuir vi
 &nbsp;
 [![Pix](https://img.shields.io/badge/Pix-Doar-FBB88A?labelColor=F26722&style=for-the-badge&logo=pix&logoColor=ffffff&link=https://tipa.ai/davidsantana06)](https://tipa.ai/davidsantana06)
 
-Este e outros projetos disponíveis no meu perfil foram desenvolvidos de forma independente. Qualquer apoio para manter este propósito é mais do que bem-vindo! 💪
-
 ## ⚖️ Licença
 
 Este projeto utiliza a **Licença MIT**, que permite que você use e modifique o código como desejar. O único requisito é dar o devido crédito, reconhecendo o esforço e o tempo dedicados à sua construção.
